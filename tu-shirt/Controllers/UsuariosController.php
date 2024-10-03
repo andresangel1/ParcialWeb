@@ -1,11 +1,7 @@
 <?php namespace Controllers;
 
     use Models\Usuario as Usuario;  
-    use Models\Nombre as Nombre;
-    use Models\Mail as Mail;
-    use Models\Contrasena as Contrasena;
-    use Models\Tipo_usuario as Tipo_usuario ;
-    use Models\Rol as Rol;
+    use Models\Tipo_usuario as Tipo_usuario;
 
     class usuariosController{
 

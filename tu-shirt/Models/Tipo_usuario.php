@@ -1,9 +1,8 @@
 <?php namespace Models;
 
-    class Usuario{
+    class Tipo_usuario{
 
         private $id_tipo_usuario;
-        private $tipo_usuario;
         private $tipo;
 
         private $con;
@@ -30,9 +29,9 @@
         }
 
         public function add(){
-            $sql = "INSERT INTO usuarios (id_tipo_usuario , tipo_usuario , tipo)
+            $sql = "INSERT INTO usuarios (id_tipo_usuario ,  tipo)
              VALUES (null,'{$this->id_tipo_usuario}
-            ','{$this->tipo_usuario}','{$this->tipo}')";
+            ','{$this->tipo}')";
             
             $this->con->consultaSimple($sql);
         }

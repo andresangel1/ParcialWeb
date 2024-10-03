@@ -1,6 +1,6 @@
 <?php namespace Models;
 
-    class Usuario{
+    class Talle{
 
         private $id_talle;
         private $talle;
@@ -30,8 +30,7 @@
 
         public function add(){
             $sql = "INSERT INTO talle (id_talle  , talle)
-             VALUES (null,'{$this->id_talle}
-            ','{$this->talle}')";
+             VALUES (null,'{$this->talle}')";
             
             $this->con->consultaSimple($sql);
         }

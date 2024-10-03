@@ -1,9 +1,8 @@
 <?php namespace Models;
 
-    class Usuario{
+    class Tipo_producto{
 
         private $id_tipo_producto;
-        private $tipo_producto;
         private $tipo;
 
         private $con;
@@ -32,7 +31,7 @@
         public function add(){
             $sql = "INSERT INTO producto (id_tipo_producto , tipo_producto , tipo)
              VALUES (null,'{$this->id_tipo_producto}
-            ','{$this->tipo_producto}','{$this->tipo}')";
+            ','{$this->tipo}')";
             
             $this->con->consultaSimple($sql);
         }

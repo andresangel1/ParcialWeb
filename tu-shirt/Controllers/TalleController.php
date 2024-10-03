@@ -4,7 +4,7 @@
 
     
 
-    class tipo_usuarioController{
+    class talleController{
         
         private $talle;
 
