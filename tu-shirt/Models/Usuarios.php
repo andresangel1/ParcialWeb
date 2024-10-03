@@ -6,8 +6,8 @@
         private $nombre;
         private $mail;
         private $contrasena;
-        private $fk_id_tipo_usuario;
-        private $fk_id_rol;
+        private $fk_tipo_usuario;
+        private $fk_rol;
 
         						
 
@@ -35,10 +35,9 @@
         }
 
         public function add(){
-            $sql = "INSERT INTO usuarios (id_usuario , nombre , mail, contrasena , fk_id_tipo_usuario , fk_id_rol)
-             VALUES (null,'{$this->id_usuario}
-            ','{$this->nombre}','{$this->mail}
-            ','{$this->contrasena}','{$this->fk_id_tipo_usuario}','{$this->fk_id_rol}')";
+            $sql = "INSERT INTO usuarios (id_usuario, nombre, mail, contrasena, fk_tipo_usuario , fk_rol)
+             VALUES (null,'{$this->nombre}','{$this->mail}
+            ','{$this->contrasena}','{$this->fk_tipo_usuario}','{$this->fk_rol}')";
             
             $this->con->consultaSimple($sql);
         }
@@ -50,8 +49,8 @@
 
          public function edit(){
             $sql = "UPDATE usuarios SET nombre='{$this->nombre}',mail='{$this->mail}',
-            contrasena`='{$this->contrasena}',fk_id_tipo_usuario='
-            {$this->fk_id_tipo_usuario}',fk_id_rol='{$this->fk_id_rol}'
+            contrasena`='{$this->contrasena}',fk_tipo_usuario='
+            {$this->fk_tipo_usuario}',fk_rol='{$this->fk_rol}'
              WHERE id_usuario = '{$this->id_usuario}'";
             $this->con->consultaSimple($sql);
         }

@@ -56,11 +56,10 @@
         
 
         }
-         //editar
         public function editar($id){
 			if(!$_POST){
-				$this->estudiante->set("id", $id);
-				$datos = $this->estudiante->view();
+				$this->pedidos->set("id_pedido", $id_pedido);
+				$datos = $this->pedidos->view();
 				return $datos;
 			}else{
                 $permitidos = array("image/jpeg","image/png","image/gif","image/jpg");
@@ -78,11 +77,6 @@
                     header("Location: " . URL . "pedidos");
 			}
         }
-		}
-        
-        public function listarProductos(){
-			$datos = $this->Producto->listar();
-			return $datos;
 		}
        
 		public function ver($id_pedido){

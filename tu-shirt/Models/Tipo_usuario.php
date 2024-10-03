@@ -29,9 +29,8 @@
         }
 
         public function add(){
-            $sql = "INSERT INTO usuarios (id_tipo_usuario ,  tipo)
-             VALUES (null,'{$this->id_tipo_usuario}
-            ','{$this->tipo}')";
+            $sql = "INSERT INTO tipo_usuarios (id_tipo_usuario, tipo)
+             VALUES (null,'{$this->tipo}')";
             
             $this->con->consultaSimple($sql);
         }

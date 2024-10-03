@@ -7,11 +7,9 @@
     class tipo_usuarioController{
         
         private $tipo_usuario;
-        private $tipo;
 
         public function __construct(){
             $this->tipo_usuario = new Tipo_usuario();
-            $this->tipo = new Tipo();
         }
 
         public function index(){
@@ -21,7 +19,7 @@
 
         public function agregar(){
             if($_POST){
-                $this->tipo_usuario->set("tipo_usuario",$_POST['tipo_usuario']);
+                $this->tipo_usuario->set("tipo",$_POST['tipo']);
                 $this->tipo_usuario->add();
                 header("Location: " . URL . "tipo_usuario" );
 

@@ -6,21 +6,21 @@
 
     class talleController{
         
-        private $talle;
+        private $talles;
 
         public function __construct(){
-            $this->talle = new Talle();
+            $this->talles = new Talle();
         }
 
         public function index(){
-            $datos = $this->talle->listar();
+            $datos = $this->talles->listar();
             return $datos;
         }
 
         public function agregar(){
             if($_POST){
-                $this->talle->set("talle",$_POST['talle']);
-                $this->talle->add();
+                $this->talles->set("talle",$_POST['talle']);
+                $this->talles->add();
                 header("Location: " . URL . "talle" );
 
             }
@@ -30,22 +30,22 @@
 
             public function editar($id_tipo_usuario){
                 if($_POST){
-                    $this->talle->set("id_talle",$_POST['id_talle']);
-                    $this->talle->set("talle",$_POST['talle']);
+                    $this->talles->set("id_talle",$_POST['id_talle']);
+                    $this->talles->set("talle",$_POST['talle']);
                     $this->tipo_producto>edit();
-                    header("Location: " . URL . "talle" );
+                    header("Location: " . URL . "talles" );
                 }else{
-                    $this->talle->set("id_talle",$id_talle);
-                    $datos = $this->talle->view();
+                    $this->talles->set("id_talle",$id_talle);
+                    $datos = $this->talles->view();
                     return $datos;
 
                 }
             }
 
             public function eliminar($id_talle) {
-                $this->talle->set("id_talle",$id_talle);
-                $this->talle->delete();
-                header("Location: " . URL . "talle" );
+                $this->talles->set("id_talle",$id_talle);
+                $this->talles->delete();
+                header("Location: " . URL . "talles" );
             }
 
         }

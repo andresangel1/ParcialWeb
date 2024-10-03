@@ -2,22 +2,18 @@
 
     use Models\Usuario as Usuario;  
     use Models\Tipo_usuario as Tipo_usuario;
+    use Models\Rol as Rol;
 
     class usuariosController{
 
         private $usuarios;
-        private $nombre;
-        private $mail;
-        private $contrasena;
         private $tipo_usuario;
-        private $rol;
+        private $roles;
 
         public function __construct(){
             $this->usuarios = new Usuario();
-            $this->nombre = new Nombre();
-            $this->mail = new Mail();
-            $this->contrasena = new Contrasena();
-            $this->rol = new Rol();
+            $this->tipo_usuario = new Tipo_usuario();
+            $this->roles = new Rol();
             
         }
 
@@ -28,13 +24,17 @@
 
         public function agregar(){
             if(!$_POST){
-                $datos = $this->usuario->listar();
+                $datos = $this->usuarios->listar();
                 return $datos;
             
             }else{
-                    $this->usuario->set("usuario",$_POST['usuario']);
-                    $this->usuario->add();
-                    header("Location: " . URL . "usuario");
+                    $this->usuarios->set("nombre",$_POST['nombre']);
+                    $this->usuarios->set("mail",$_POST['mail']);
+                    $this->usuarios->set("contrasena",$_POST['contrasena']);                    
+                    $this->usuarios->set("fk_tipo_usuario",$_post['fk_tipo_usuario']);
+                    $this->usuarios->set("fk_rol",$_POST['fk_rol']);
+                    $this->usuarios->add();
+                    header("Location: " . URL . "usuarios");
 
                 }
             }
@@ -44,24 +44,19 @@
         }
         public function editar($id_usuario){
 			if(!$_POST){
-				$this->usuario->set("id_usuario", $id_usuario);
-				$datos = $this->id_usario->view();
+				$this->usuarios->set("id_usuario", $id_usuario);
+				$datos = $this->usuarios->view();
 				return $datos;
 			}else{
-				$this->usuario->set("id_usuario", $id_usuario);
-				$this->usuario->set("nombre",$_POST['nombre']);
-                $this->usuario->set("mail",$_POST['mail']);
-                $this->usuario->set("contrasena",$_POST['contrasena']);
-                $this->usuario->set("tipo_usuario",$_POST['tipo_usuario']);
-                $this->usuario->set("rol",$_POST['rol']);
-				$this->usuario->edit();
-				header("Location: " . URL . "usuario");
+				$this->usuarios->set("id_usuario", $_POST['id_usuario']);
+				$this->usuarios->set("nombre",$_POST['nombre']);
+                $this->usuarios->set("mail",$_POST['mail']);
+                $this->usuarios->set("contrasena",$_POST['contrasena']);
+                $this->usuarios->set("fk_tipo_usuario",$_POST['fk_tipo_usuario']);
+                $this->usuarios->set("fk_rol",$_POST['fk_rol']);
+				$this->usuarios->edit();
+				header("Location: " . URL . "usuarios");
 			}
-		}
-        
-        public function listarProductos(){
-			$datos = $this->Producto->listar();
-			return $datos;
 		}
        
 		public function ver($id_usuario){

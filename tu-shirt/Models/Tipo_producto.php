@@ -2,7 +2,7 @@
 
     class Tipo_producto{
 
-        private $id_tipo_producto;
+        private $id_tipo_productos;
         private $tipo;
 
         private $con;
@@ -22,32 +22,31 @@
 
 
         public function listar(){
-            $sql = "SELECT * FROM tipo_producto";
+            $sql = "SELECT * FROM tipo_productos";
             $datos = $this->con->consultaRetorno($sql);
             return $datos;
 
         }
 
         public function add(){
-            $sql = "INSERT INTO producto (id_tipo_producto , tipo_producto , tipo)
-             VALUES (null,'{$this->id_tipo_producto}
-            ','{$this->tipo}')";
+            $sql = "INSERT INTO tipo_productos (id_tipo_productos, tipo)
+             VALUES (null,'{$this->tipo})";
             
             $this->con->consultaSimple($sql);
         }
 
         public function delete(){
-            $sql = "DELETE FROM tipo_producto WHERE id_tipo_producto = '{$this->id_tipo_producto}'";
+            $sql = "DELETE FROM tipo_productos WHERE id_tipo_productos = '{$this->id_tipo_productos}'";
             $this->con->consultaSimple($sql);
         }
 
          public function edit(){
-            $sql = "UPDATE tipo_producto SET tipo='{$this->tipo}' WHERE id_tipo_producto = '{$this->id_tipo_producto}'";
+            $sql = "UPDATE tipo_productos SET tipo='{$this->tipo}' WHERE id_tipo_productos = '{$this->id_tipo_productos}'";
             $this->con->consultaSimple($sql);
         }
 
         public function view(){
-            $sql = "SELECT * FROM tipo_producto WHERE id_tipo_producto = '{$this->id_tipo_producto}'";
+            $sql = "SELECT * FROM tipo_productos WHERE id_tipo_productos = '{$this->id_tipo_productos}'";
                 $datos = $this->con->consultaRetorno($sql);
                 $row = mysqli_fetch_assoc($datos);
                 return $row;
