@@ -1,5 +1,5 @@
 <?php namespace Models;
-    class productos{
+    class Producto{
         private $id_producto;
         private $nombre;
         private $fk_tipo_productos;
@@ -20,7 +20,7 @@
             return $datos;
         }
         public function add(){
-            $sql = "INSERT INTO productos (id_producto, nombre, fk_tipo_producto) VALUES (null,'{$this->id_producto}','{$this->nombre}','{$this->fk_tipo_productos}')";
+            $sql = "INSERT INTO productos (id_producto, nombre, fk_tipo_producto) VALUES (null,'{$this->nombre}','{$this->fk_tipo_productos}')";
             
             $this->con->consultaSimple($sql);
         }
@@ -29,7 +29,7 @@
             $this->con->consultaSimple($sql);
         }
          public function edit(){
-            $sql = "UPDATE productos SET id_producto='{$this->id_producto}',nombre='{$this->nombre}',fk_tipo_productos`='{$this->fk_tipo_productos}'";
+            $sql = "UPDATE productos SET nombre='{$this->nombre}',fk_tipo_productos`='{$this->fk_tipo_productos}' WHERE id_producto = '{$this->id_producto}'";
             $this->con->consultaSimple($sql);
         }
         public function view(){

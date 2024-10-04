@@ -1,15 +1,15 @@
 <?php namespace Controllers;
 
 
-    use Models\productos_has_talles as Producto_has_talle;
-    use Models\Productos as Producto;
-    use Models\Productos as Talle;
+    use Models\Producto_has_talles as Producto_has_talle;
+    use Models\Producto as Producto;
+    use Models\Producto as Talle;
 
     class productos_has_tallesController{
 
-        private $id_productos_has_tallescol;
-        private $fk_id_producto;
-        private $fk_id_talle;
+        private $productos_has_talles;
+        private $productos;
+        private $talles;
 
         public function __construct(){
             $this->productos_has_talles = new Producto_has_talle();

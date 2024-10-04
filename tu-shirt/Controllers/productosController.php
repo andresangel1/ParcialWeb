@@ -1,12 +1,14 @@
 <?php namespace Controllers;
 
-    use Models\productos as Producto;
+    use Models\Producto as Producto;
+    use Models\Tipo_producto as Tipo_producto;
 
     
 
     class productosController{
         
         private $productos;
+        private $tipo_productos;
 
         public function __construct(){
             $this->productos = new Producto();
@@ -19,7 +21,8 @@
 
         public function agregar(){
             if($_POST){
-                $this->productos->set("producto",$_POST['producto']);
+                $this->productos->set("nombre",$_POST['nombre']);
+                $this->productos->set("fk_tipo_producto",$_POST['fk_tipo_producto']);
                 $this->productos->add();
                 header("Location: " . URL . "productos" );
 

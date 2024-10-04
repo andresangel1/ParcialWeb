@@ -1,5 +1,5 @@
 <?php namespace Models;
-    class Roles{
+    class Rol{
         private $id_rol;
         private $tipo;
         						
@@ -19,7 +19,7 @@
             return $datos;
         }
         public function add(){
-            $sql = "INSERT INTO roles (id_rol, tipo) VALUES (null,'{$this->id_rol}','{$this->tipo}')";
+            $sql = "INSERT INTO roles (id_rol, tipo) VALUES (null,'{$this->tipo}')";
             
             $this->con->consultaSimple($sql);
         }
@@ -28,7 +28,7 @@
             $this->con->consultaSimple($sql);
         }
          public function edit(){
-            $sql = "UPDATE roles SET id_rol='{$this->id_rol}',tipo='{$this->tipo}' WHERE id_rol = '{$this->id_rol}'";
+            $sql = "UPDATE roles SET tipo='{$this->tipo}' WHERE id_rol = '{$this->id_rol}'";
             $this->con->consultaSimple($sql);
         }
         public function view(){

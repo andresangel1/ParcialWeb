@@ -1,6 +1,6 @@
 <?php namespace Controllers;
 
-    use Models\roles as Rol;
+    use Models\Rol as Rol;
 
     
 
@@ -19,7 +19,7 @@
 
         public function agregar(){
             if($_POST){
-                $this->roles->set("rol",$_POST['rol']);
+                $this->roles->set("tipo",$_POST['tipo']);
                 $this->roles->add();
                 header("Location: " . URL . "roles" );
 

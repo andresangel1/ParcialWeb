@@ -1,5 +1,5 @@
 <?php namespace Models;
-    class productos_has_diseno{
+    class Producto_has_diseno{
         private $id_productos_has_diseno;
         private $fk_producto;
         private $fk_diseno;
@@ -20,7 +20,7 @@
             return $datos;
         }
         public function add(){
-            $sql = "INSERT INTO productos_has_diseno (id_productos_has_diseno, fk_producto, fk_diseno) VALUES ('{$this->fk_producto}','{$this->fk_diseno}',null)";
+            $sql = "INSERT INTO productos_has_diseno (id_productos_has_diseno, fk_producto, fk_diseno) VALUES (null,'{$this->fk_producto}','{$this->fk_diseno}')";
             $this->con->consultaSimple($sql);
         }
         public function delete(){

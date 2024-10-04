@@ -20,7 +20,7 @@
             return $datos;
         }
         public function add(){
-            $sql = "INSERT INTO productos_has_talles (fk_id_productos, fk_id_talle, id_productos_has_tallescol) VALUES ('{$this->fk_id_productos}','{$this->fk_id_talle}',null)";
+            $sql = "INSERT INTO productos_has_talles (fk_id_producto, fk_id_talle, id_productos_has_tallescol) VALUES ('{$this->fk_id_producto}','{$this->fk_id_talle}',null)";
             $this->con->consultaSimple($sql);
         }
         public function delete(){

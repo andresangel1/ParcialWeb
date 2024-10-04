@@ -1,15 +1,15 @@
 <?php namespace Controllers;
 
 
-    use Models\productos_has_diseno as productos_has_diseno;
-    use Models\productos as Producto;
-    use Models\disenos as Diseno;
+    use Models\Producto_has_diseno as Producto_has_diseno;
+    use Models\Producto as Producto;
+    use Models\Diseno as Diseno;
 
     class productos_has_disenoController{
 
-        private $id_productos_has_diseno;
-        private $fk_producto;
-        private $fk_diseno;
+        private $productos_has_diseno;
+        private $productos;
+        private $disenos;
 
         public function __construct(){
             $this->productos_has_diseno = new Producto_has_Diseno();

@@ -23,11 +23,8 @@
         }
 
         public function agregar(){
-            if(!$_POST){
-                $datos = $this->usuarios->listar();
-                return $datos;
-            
-            }else{
+            if($_POST){
+                
                     $this->usuarios->set("nombre",$_POST['nombre']);
                     $this->usuarios->set("mail",$_POST['mail']);
                     $this->usuarios->set("contrasena",$_POST['contrasena']);                    
@@ -41,7 +38,7 @@
 
         
 
-        }
+        
         public function editar($id_usuario){
 			if(!$_POST){
 				$this->usuarios->set("id_usuario", $id_usuario);
@@ -70,5 +67,6 @@
 			$this->usuarios->delete();
 			header("Location: " . URL . "usuarios");
 		}
+    }
         
 ?>
