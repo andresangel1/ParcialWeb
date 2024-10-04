@@ -28,7 +28,7 @@
             $this->con->consultaSimple($sql);
         }
          public function edit(){
-            $sql = "UPDATE productos_has_diseno SET fk_producto='{$this->fk_producto}',fk_diseno='{$this->fk_diseno}', WHERE id_productos_has_diseno = '{$this->id_productos_has_diseno}'"
+            $sql = "UPDATE productos_has_diseno SET fk_producto='{$this->fk_producto}',fk_diseno='{$this->fk_diseno}', WHERE id_productos_has_diseno = '{$this->id_productos_has_diseno}'";
             $this->con->consultaSimple($sql);
         }
         public function view(){

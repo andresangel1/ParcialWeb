@@ -3,7 +3,7 @@
         private $id_productos_has_tallescol;
         private $fk_id_producto;
         private $fk_id_talle;
-        			
+    
         private $con;
         public function __construct(){
             $this->con = new Conexion();
@@ -27,8 +27,8 @@
             $sql = "DELETE FROM productos_has_talles WHERE id_productos_has_tallescol = '{$this->id_productos_has_tallescol}'";
             $this->con->consultaSimple($sql);
         }
-         public function edit(){
-            $sql = "UPDATE productos_has_talles SET fk_id_producto='{$this->fk_id_producto}',fk_id_talle='{$this->fk_id_talle}', WHERE id_productos_has_tallescol = '{$this->id_productos_has_tallescol}'"
+        public function edit(){
+            $sql = "UPDATE productos_has_talles SET fk_id_producto='{$this->fk_id_producto}',fk_id_talle='{$this->fk_id_talle}', WHERE id_productos_has_tallescol = '{$this->id_productos_has_tallescol}'";
             $this->con->consultaSimple($sql);
         }
         public function view(){

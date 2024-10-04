@@ -43,7 +43,7 @@
         }
 
          public function edit(){
-            $sql = "UPDATE colores_has_productos SET colores_id_color='{$this->colores_id_color}',productos_id_producto='{$this->productos_id_producto}', WHERE id_colores_has_productos = '{$this->id_colores_has_productos}'"
+            $sql = "UPDATE colores_has_productos SET colores_id_color='{$this->colores_id_color}',productos_id_producto='{$this->productos_id_producto}', WHERE id_colores_has_productos = '{$this->id_colores_has_productos}'";
             $this->con->consultaSimple($sql);
         }
 
