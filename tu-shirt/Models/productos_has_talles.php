@@ -1,5 +1,5 @@
 <?php namespace Models;
-    class productos_has_talles{
+    class Producto_has_talles{
         private $id_productos_has_tallescol;
         private $fk_id_producto;
         private $fk_id_talle;
