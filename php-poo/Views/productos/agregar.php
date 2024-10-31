@@ -10,11 +10,11 @@
 	  		<div class="col-md-10">
 	  			<form class="form-horizontal" action="" method="POST" enctype="multipart/form-data">
 				    <div class="form-group">
-				      <label for="inputEmail" class="control-label">Nombre del producto</label>
+				      <label for="nombre" class="control-label">Nombre del producto</label>
 				        <input class="form-control" name="nombre" type="text" required>
 				    </div>
 				    <div class="form-group">
-				      <label for="inputEmail" class="control-label">Categoria</label>
+				      <label for="id_tipo_productos" class="control-label">Categoria</label>
 				      <select name="id_tipo_productos" class="form-control">
 				      	<?php while($row = mysqli_fetch_array($datos)){ ?>
 				      		<option value="<?php echo $row['id_tipo_productos']; ?>"><?php echo $row['tipo']; ?></option>

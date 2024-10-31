@@ -15,7 +15,7 @@
             return $this->$atributo;
         }
         public function listar(){
-            $sql = "SELECT t1.*, t2.tipo as categoria FROM productos t1 INNER JOIN tipo_productos t2 ON t1.fk_tipo_productos = t2.id_tipo_productos ORDER BY id DESC";
+            $sql = "SELECT t1.*, t2.tipo as categoria FROM productos t1 INNER JOIN tipo_productos t2 ON t1.fk_tipo_productos = t2.id_tipo_productos ORDER BY id_producto DESC";
             $datos = $this->con->consultaRetorno($sql);
             return $datos;
         }
