@@ -11,9 +11,9 @@
 	  			<form class="form-horizontal" action="" method="POST">
 				    <div class="form-group">
 				      <label for="inputEmail" class="control-label">Nombre de la categoria</label>
-				        <input class="form-control" value="<?php echo $datos['tipo']; ?>" name="nombre" type="text" required>
+				        <input class="form-control" value="<?php echo $datos['tipo']; ?>" name="tipo" type="text" required>
 				    </div>
-				    <input value="<?php echo $datos['id_tipo_producto']; ?>" name="id_tipo_producto" type="hidden">
+				    <input value="<?php echo $datos['id_tipo_productos']; ?>" name="id_tipo_productos" type="hidden">
 				    <div class="form-group">
 				    	 <button type="submit" class="btn btn-success">Editar</button>
 				        <button type="reset" class="btn btn-warning">Borrar</button>

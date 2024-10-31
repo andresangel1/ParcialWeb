@@ -16,11 +16,11 @@
 		  <tbody>
 		  	<?php while($row = mysqli_fetch_array($datos)){ ?>
 		  	<tr>
-		  		<td><?php echo $row['id_tipo_producto']; ?></td>
+		  		<td><?php echo $row['id_tipo_productos']; ?></td>
 			    <td><?php echo $row['tipo']; ?></td>
 			 <td>
-			 	<a class="btn btn-warning" href="<?php echo URL; ?>categorias/editar/<?php echo $row['id_tipo_producto']; ?>">Editar</a>
-				<a class="btn btn-danger" href="<?php echo URL; ?>categorias/eliminar/<?php echo $row['id_tipo_producto']; ?>">Eliminar</a>
+			 	<a class="btn btn-warning" href="<?php echo URL; ?>categorias/editar/<?php echo $row['id_tipo_productos']; ?>">Editar</a>
+				<a class="btn btn-danger" href="<?php echo URL; ?>categorias/eliminar/<?php echo $row['id_tipo_productos']; ?>">Eliminar</a>
 			</td>
 			</tr>
 			<?php } ?>

@@ -25,7 +25,7 @@
                 }
             }
 
-            $ruta = ROOT . "Views" . DS .$request->getControlador() . DS . $request->getMetodo() . ".php";
+            $ruta = ROOT . "Views" . DS .$request->getControlador() .DS . $request->getMetodo() . ".php";
             if(is_readable($ruta)){
                 require_once $ruta;
 

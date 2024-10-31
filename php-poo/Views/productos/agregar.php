@@ -15,9 +15,9 @@
 				    </div>
 				    <div class="form-group">
 				      <label for="inputEmail" class="control-label">Categoria</label>
-				      <select name="id_tipo_producto" class="form-control">
+				      <select name="id_tipo_productos" class="form-control">
 				      	<?php while($row = mysqli_fetch_array($datos)){ ?>
-				      		<option value="<?php echo $row['id_tipo_producto']; ?>"><?php echo $row['tipo']; ?></option>
+				      		<option value="<?php echo $row['id_tipo_productos']; ?>"><?php echo $row['tipo']; ?></option>
 				      	<?php } ?>
 				      </select>
 				    </div>
