@@ -13,10 +13,10 @@
 				        <input class="form-control" value="<?php echo $datos['nombre']; ?>" name="nombre" type="text" required>
 				    </div>
 				    <div class="form-group">
-				      <label for="inputEmail" class="control-label">Categoria (<b>Categoria Actual: <?php echo $datos['fk_tipo_producto']; ?></b>)</label>
-				      <select name="id_tipo_producto" class="form-control">
+				      <label for="inputEmail" class="control-label">Categoria (<b>Categoria Actual: <?php echo $datos['fk_tipo_productos']; ?></b>)</label>
+				      <select name="id_tipo_productos" class="form-control">
 				      	<?php while($row = mysqli_fetch_array($tipo_productos)){ ?>
-				      		<option value="<?php echo $row['id_tipo_producto']; ?>"><?php echo $row['tipo']; ?></option>
+				      		<option value="<?php echo $row['id_tipo_productos']; ?>"><?php echo $row['tipo']; ?></option>
 				      	<?php } ?>
 				      </select>
 				    </div>

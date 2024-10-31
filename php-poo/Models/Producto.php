@@ -15,12 +15,12 @@
             return $this->$atributo;
         }
         public function listar(){
-            $sql = "SELECT * FROM productos";
+            $sql = "SELECT t1.*, t2.tipo as categoria FROM productos t1 INNER JOIN tipo_productos t2 ON t1.fk_tipo_productos = t2.id_tipo_productos ORDER BY id DESC";
             $datos = $this->con->consultaRetorno($sql);
             return $datos;
         }
         public function add(){
-            $sql = "INSERT INTO productos (id_producto, nombre, fk_tipo_producto) VALUES (null,'{$this->nombre}','{$this->fk_tipo_productos}')";
+            $sql = "INSERT INTO productos (id_producto, nombre, fk_tipo_productos) VALUES (null,'{$this->nombre}','{$this->fk_tipo_productos}')";
             
             $this->con->consultaSimple($sql);
         }
@@ -33,7 +33,7 @@
             $this->con->consultaSimple($sql);
         }
         public function view(){
-            $sql = "SELECT * FROM productos WHERE id_producto = '{$this->id_producto}'";
+            $sql = "SELECT t1.*, t2.tipo as categoria FROM productos t1 INNER JOIN tipo_productos t2 ON t1.fk_tipo_productos = t2.id_tipo_productos WHERE t1.id_producto = '{$this->id_producto}'";
                 $datos = $this->con->consultaRetorno($sql);
                 $row = mysqli_fetch_assoc($datos);
                 return $row;

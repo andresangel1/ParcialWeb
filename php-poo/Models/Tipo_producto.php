@@ -29,8 +29,7 @@
 
 
         public function add(){
-            $sql = "INSERT INTO tipo_productos (id_tipo_productos, tipo)
-             VALUES (null,'{$this->tipo}')";
+            $sql = "INSERT INTO tipo_productos (id_tipo_productos, tipo) VALUES (null,'{$this->tipo}')";
             
             $this->con->consultaSimple($sql);
         }

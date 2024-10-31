@@ -11,7 +11,7 @@
             <li class="list-group-item">
               <b>Nombre: </b><?php echo $datos['nombre']; ?>
             <li class="list-group-item">
-              <b>Sección: </b><?php echo $datos['fk_tipo_productos']; ?>
+              <b>Categoria: </b><?php echo $datos['fk_tipo_productos']; ?>
             </li>
           </ul>
         </div>

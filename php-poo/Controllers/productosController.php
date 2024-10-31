@@ -7,44 +7,54 @@
 
     class productosController{
         
-        private $productos;
-        private $tipo_productos;
+        private $producto;
+        private $tipo_producto;
 
         public function __construct(){
-            $this->productos = new Producto();
+            $this->producto = new Producto();
         }
 
         public function index(){
-            $datos = $this->productos->listar();
+            $datos = $this->producto->listar();
             return $datos;
         }
 
-        public function agregar(){
-            if($_POST){
-                $this->productos->set("nombre",$_POST['nombre']);
-                $this->productos->set("fk_tipo_producto",$_POST['fk_tipo_producto']);
-                $this->productos->add();
+
+         public function agregar(){
+			if(!$_POST){
+				$datos = $this->tipo_producto->listar();
+				return $datos;
+			}else{
+                $this->producto->set("nombre",$_POST['nombre']);
+                $this->producto->set("fk_tipo_productos",$_POST['fk_tipo_productos']);
+                $this->producto->add();
                 header("Location: " . URL . "productos" );
+				}
+			}
+		
 
-            }
-        
-
-         }
-
-            public function editar($id_producto){
-                if($_POST){
-                    $this->productos->set("id_producto",$_POST['id_producto']);
-                    $this->productos->set("nombre",$_POST['nombre']);
-                    $this->productos->set("fk_tipo_producto",$_POST['fk_tipo_producto']);
-                    $this->productos->edit();
+        public function editar($id_producto){
+			if(!$_POST){
+				$this->producto->set("id_producto", $id_producto);
+				$datos = $this->producto->view();
+				return $datos;
+			}else{
+				$this->producto->set("id_producto",$_POST['id_producto']);
+                    $this->producto->set("nombre",$_POST['nombre']);
+                    $this->producto->set("fk_tipo_productos",$_POST['fk_tipo_productos']);
+                    $this->producto->edit();
                     header("Location: " . URL . "productos" );
+			}
+		}
 
-                }
-            }
+        public function listarTipo_productos(){
+			$datos = $this->tipo_producto->listar();
+			return $datos;
+		}
 
             public function eliminar($id_producto) {
-                $this->productos->set("id_producto",$id_producto);
-                $this->productos->delete();
+                $this->producto->set("id_producto",$id_producto);
+                $this->producto->delete();
                 header("Location: " . URL . "productos" );
             }
 
@@ -54,6 +64,7 @@
 
 
         }
+        $productos = new productosController();
 
 
     
