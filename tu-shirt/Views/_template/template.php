@@ -11,8 +11,8 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>Administración de productos</title>
-		<link rel="stylesheet" href="<?php echo URL; ?>Views/_template/css/bootstrap.css">
-		<link rel="stylesheet" href="<?php echo URL; ?>Views/_template/css/general.css">
+		<link rel="stylesheet" href="<?php echo URL; ?>_template/css/bootstrap.css">
+		<link rel="stylesheet" href="<?php echo URL; ?>_template/css/general.css">
 	</head>
 	<body>
 		<nav class="navbar navbar-inverse navbar-fixed-top">
@@ -59,7 +59,7 @@
 		Produccion Web
 	</footer>
 	<script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
-	<script src="<?php echo URL; ?>Views/_template/js/bootstrap.js"></script>
+	<script src="<?php echo URL; ?>_template/js/bootstrap.js"></script>
 	</body>
 	</html>
 <?php
