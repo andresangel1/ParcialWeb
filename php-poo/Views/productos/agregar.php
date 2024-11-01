@@ -9,19 +9,20 @@
 	  		<div class="col-md-1"></div>
 	  		<div class="col-md-10">
 	  			<form class="form-horizontal" action="" method="POST" enctype="multipart/form-data">
+				
 				    <div class="form-group">
 				      <label for="nombre" class="control-label">Nombre del producto</label>
 				        <input class="form-control" name="nombre" type="text" required>
 				    </div>
 				    <div class="form-group">
-				      <label for="id_tipo_productos" class="control-label">Categoria</label>
-				      <select name="id_tipo_productos" class="form-control">
-				      	<?php while($row = mysqli_fetch_array($datos)){ ?>
+				      <label for="fk_tipo_productos" class="control-label">Categoria</label>
+				      <select name="fk_tipo_productos" class="form-control">
+					  <?php while($row = mysqli_fetch_array($datos)){ ?>
 				      		<option value="<?php echo $row['id_tipo_productos']; ?>"><?php echo $row['tipo']; ?></option>
 				      	<?php } ?>
 				      </select>
 				    </div>
-				    <div class="form-group">
+					<div class="form-group">
 				    	 <button type="submit" class="btn btn-success">Agregar</button>
 				        <button type="reset" class="btn btn-warning">Borrar</button>
 				    </div>

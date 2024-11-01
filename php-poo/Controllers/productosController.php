@@ -12,6 +12,7 @@
 
         public function __construct(){
             $this->producto = new Producto();
+            $this->tipo_producto = new Tipo_producto();
         }
 
         public function index(){
@@ -49,6 +50,12 @@
 
         public function listarTipo_productos(){
 			$datos = $this->tipo_producto->listar();
+			return $datos;
+		}
+
+        public function ver($id_producto){
+			$this->producto->set("id_producto",$id_producto);
+			$datos = $this->producto->view();
 			return $datos;
 		}
 

@@ -29,7 +29,7 @@
             $this->con->consultaSimple($sql);
         }
          public function edit(){
-            $sql = "UPDATE productos SET nombre='{$this->nombre}',fk_tipo_productos`='{$this->fk_tipo_productos}' WHERE id_producto = '{$this->id_producto}'";
+            $sql = "UPDATE productos SET nombre='{$this->nombre}',fk_tipo_productos='{$this->fk_tipo_productos}' WHERE id_producto='{$this->id_producto}'";
             $this->con->consultaSimple($sql);
         }
         public function view(){

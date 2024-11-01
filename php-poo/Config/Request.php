@@ -1,63 +1,48 @@
 <?php namespace Config;
 
-    class Request{
+	class Request{
 
-        public function __construct(){
-            if(isset($_GET['url'])){
+		//CREMOS LAS VARIABLES QUE GUSRDEN LOS NOMBRES
+		private $controlador;
+		private $metodo;
+		private $argumento;
 
-                $ruta  = filter_input(INPUT_GET, 'url',FILTER_SANITIZE_URL);
-                $ruta = explode("/", $ruta);
-                $ruta = array_filter($ruta);
+		public function __construct(){
+			if(isset($_GET['url'])){
+				$ruta = filter_input(INPUT_GET, 'url', FILTER_SANITIZE_URL);
+				$ruta = explode("/", $ruta);
+				$ruta = array_filter($ruta);
+				
+				
+				if($ruta[0] == "index.php"){
+					$this->controlador = "productos";
+					
+				}else{
+					$this->controlador = strtolower(array_shift($ruta));
+				}
 
+				$this->metodo = strtolower(array_shift($ruta));
 
-                if($ruta[0] == "index.php" ){
-                    $this->controlador = "productos";
+				if(!$this->metodo){
+					$this->metodo = "index";
+				}
+				$this->argumento = $ruta;
+			}else{
+				$this->controlador = "productos";
+				$this->metodo = "index";
+			}
+		}
 
-                }else{
-                    $this->controlador = strtolower(array_shift($ruta));
-                }
+		public function getControlador(){
+			return $this->controlador;
+		}
 
-                $this->metodo = strtolower(array_shift($ruta));
+		public function getMetodo(){
+			return $this->metodo;
+		}
 
-                if(!$this->metodo){
-                    $this->metodo = "index";
-
-                }
-                    $this->argumento = $ruta;
-                
-
-                }else{
-                    $this->controlador = "productos";
-                    $this->metodo = "index";
-                }
-
-            
-
-            }
-
-            public function  getControlador(){
-                return $this->controlador;
-
-            }
-            public function  getMetodo(){
-                return $this->metodo;
-
-            }
-            public function  getArgumento(){
-                return $this->argumento;
-
-            }
-
-
-
-        }
-
-
- 
-
-
-    
-
-
-
+		public function getArgumento(){
+			return $this->argumento;
+		}
+	}
 ?>

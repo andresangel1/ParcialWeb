@@ -10,7 +10,7 @@
 	  		<div class="col-md-10">
 	  			<form class="form-horizontal" action="" method="POST" enctype="multipart/form-data">
 				    <div class="form-group">
-				      <label for="inputEmail" class="control-label">Nombre de la categoria</label>
+				      <label for="tipo" class="control-label">Nombre de la categoria</label>
 				        <input class="form-control" name="tipo" type="text" required>
 				    </div>
 				    <div class="form-group">

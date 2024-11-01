@@ -40,8 +40,8 @@
 		        <li class="dropdown">
 		          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Categorias <span class="caret"></span></a>
 		          <ul class="dropdown-menu" role="menu">
-		            <li><a href="<?php echo URL; ?>categorias">Listado</a></li>
-		            <li><a href="<?php echo URL; ?>categorias/agregar">Agregar</a></li>
+		            <li><a href="<?php echo URL; ?>tipo_productos">Listado</a></li>
+		            <li><a href="<?php echo URL; ?>tipo_productos/agregar">Agregar</a></li>
 		          </ul>
 		        </li>
 		      </ul>
